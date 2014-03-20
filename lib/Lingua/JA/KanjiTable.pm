@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Exporter qw/import/;
 
-our $VERSION   = "0.02";
+our $VERSION   = "0.03";
 our @EXPORT    = qw/InJoyoKanji InJouyouKanji InJinmeiyoKanji InJinmeiyouKanji/;
 our @EXPORT_OK = qw//;
 
@@ -2860,6 +2860,11 @@ Lingua::JA::KanjiTable - Kanji properties
   '姦' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 0
 
 =for test_synopsis_expectation_no_test
+
+Jinmei(名) check:
+
+  use Lingua::JA::KanjiTable;
+  use utf8;
 
   '太郎喜左衛門将時能' =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
   '愛子エンジェル'     =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
