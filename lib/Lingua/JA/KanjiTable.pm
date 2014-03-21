@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Exporter qw/import/;
 
-our $VERSION   = "0.03";
+our $VERSION   = "0.04";
 our @EXPORT    = qw/InJoyoKanji InJouyouKanji InJinmeiyoKanji InJinmeiyouKanji/;
 our @EXPORT_OK = qw//;
 
@@ -2870,12 +2870,15 @@ Jinmei(名) check:
   '愛子エンジェル'     =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
   'み〜こ'             =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 0
   'ニャー'             =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
+  '奈々'               =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
+  '〆子'               =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 0
 
   sub InJinmei
   {
       return <<"END";
   +Lingua::JA::KanjiTable::InJoyoKanji
   +Lingua::JA::KanjiTable::InJinmeiyoKanji
+  3005
   3041\t3096
   309D
   309E

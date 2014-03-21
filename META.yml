@@ -28,7 +28,7 @@ no_index:
 provides:
   Lingua::JA::KanjiTable:
     file: lib/Lingua/JA/KanjiTable.pm
-    version: 0.03
+    version: 0.04
 requires:
   Exporter: 0
   perl: 5.008001
@@ -36,4 +36,4 @@ resources:
   bugtracker: https://github.com/pawa-/Lingua-JA-KanjiTable/issues
   homepage: https://github.com/pawa-/Lingua-JA-KanjiTable
   repository: git://github.com/pawa-/Lingua-JA-KanjiTable
-version: 0.03
+version: 0.04
