@@ -5,14 +5,19 @@ use strict;
 use warnings;
 use Exporter qw/import/;
 
-our $VERSION   = "0.04";
+our $VERSION   = "0.05";
 our @EXPORT    = qw/InJoyoKanji InJouyouKanji InJinmeiyoKanji InJinmeiyouKanji/;
-our @EXPORT_OK = qw//;
+our @EXPORT_OK = qw/InJoyoKanji20101130 InJouyouKanji20101130 InJinmeiyoKanji20101130 InJinmeiyouKanji20101130/;
 
-*InJouyouKanji    = \&InJoyoKanji;
-*InJinmeiyouKanji = \&InJinmeiyoKanji;
+*InJoyoKanji           = \&InJoyoKanji20101130;
+*InJouyouKanji         = \&InJoyoKanji;
+*InJouyouKanji20101130 = \&InJoyoKanji20101130;
 
-sub InJoyoKanji
+*InJinmeiyoKanji          = \&InJinmeiyoKanji20101130;
+*InJinmeiyouKanji         = \&InJinmeiyoKanji;
+*InJinmeiyouKanji20101130 = \&InJinmeiyoKanji20101130;
+
+sub InJoyoKanji20101130
 {
     return <<"END";
 4E00
@@ -1995,7 +2000,7 @@ sub InJoyoKanji
 END
 }
 
-sub InJinmeiyoKanji
+sub InJinmeiyoKanji20101130
 {
     return <<"END";
 4E11
@@ -2848,14 +2853,17 @@ Lingua::JA::KanjiTable - Kanji properties
   use Lingua::JA::KanjiTable;
   use utf8;
 
-  '亜' =~ /^\p{InJoyoKanji}$/    ? 1 : 0; # => 1
-  '亞' =~ /^\p{InJoyoKanji}$/    ? 1 : 0; # => 0
-  '叱' =~ /^\p{InJouyouKanji}$/  ? 1 : 0; # => 0
-  '𠮟' =~ /^\p{InJouyouKanji}$/  ? 1 : 0; # => 1
-  '固唾' =~ /^\p{InJoyoKanji}+$/ ? 1 : 0; # => 1
+  '亜'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 1
+  '亞'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 0
+  '匁'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 0
+  '叱'   =~ /^\p{InJouyouKanji}$/ ? 1 : 0; # => 0
+  '𠮟'   =~ /^\p{InJouyouKanji}$/ ? 1 : 0; # => 1
+  '恍惚' =~ /^\p{InJoyoKanji}+$/  ? 1 : 0; # => 0
+  '固唾' =~ /^\p{Lingua::JA::KanjiTable::InJoyoKanji20101130}+$/ ? 1 : 0; # => 1
 
-  '柊' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
   '亞' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
+  '匁' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
+  '柊' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
   '苺' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
   '姦' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 0
 
@@ -2893,15 +2901,31 @@ Lingua::JA::KanjiTable provides user-defined Unicode properties relating to Kanj
 
 =head1 EXPORTS
 
+By default Lingua::JA::KanjiTable exports the following user-defined Unicode properties:
+
 =over 4
 
-=item InJoyoKanji - 常用漢字表（平成22年11月30日内閣告示）
+=item InJoyoKanji - The latest Jouyou Kanji table（平成22年11月30日内閣告示第2号）
 
 =item InJouyouKanji - ditto
 
-=item InJinmeiyoKanji - 人名用漢字
+=item InJinmeiyoKanji - The latest Jinmeiyou Kanji table（2010年11月30日版）
 
 =item InJinmeiyouKanji - ditto
+
+=back
+
+The followings are not exported by default:
+
+=over 4
+
+=item InJoyoKanji20101130 - 常用漢字表（平成22年11月30日内閣告示第2号）
+
+=item InJouyouKanji20101130 - ditto
+
+=item InJinmeiyoKanji20101130- 人名用漢字表（2010年11月30日版）
+
+=item InJinmeiyouKanji20101130 - ditto
 
 =back
 
@@ -2913,11 +2937,11 @@ L<常用漢字表（平成22年11月30日内閣告示）|http://www.bunka.go.jp/
 
 L<Jinmeiyō kanji - Wikipedia, the free encyclopedia|http://en.wikipedia.org/wiki/Jinmeiy%C5%8D_kanji>
 
+L<人名用漢字表|http://www.moj.go.jp/content/000058122.pdf>
+
 戸籍法 第50条
 
 戸籍法施行規則 第60条
-
-L<人名用漢字表|http://www.moj.go.jp/content/000058122.pdf>
 
 =head1 LICENSE
 

@@ -7,14 +7,17 @@ Lingua::JA::KanjiTable - Kanji properties
     use Lingua::JA::KanjiTable;
     use utf8;
 
-    '亜' =~ /^\p{InJoyoKanji}$/    ? 1 : 0; # => 1
-    '亞' =~ /^\p{InJoyoKanji}$/    ? 1 : 0; # => 0
-    '叱' =~ /^\p{InJouyouKanji}$/  ? 1 : 0; # => 0
-    '𠮟' =~ /^\p{InJouyouKanji}$/  ? 1 : 0; # => 1
-    '固唾' =~ /^\p{InJoyoKanji}+$/ ? 1 : 0; # => 1
+    '亜'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 1
+    '亞'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 0
+    '匁'   =~ /^\p{InJoyoKanji}$/   ? 1 : 0; # => 0
+    '叱'   =~ /^\p{InJouyouKanji}$/ ? 1 : 0; # => 0
+    '𠮟'   =~ /^\p{InJouyouKanji}$/ ? 1 : 0; # => 1
+    '恍惚' =~ /^\p{InJoyoKanji}+$/  ? 1 : 0; # => 0
+    '固唾' =~ /^\p{Lingua::JA::KanjiTable::InJoyoKanji20101130}+$/ ? 1 : 0; # => 1
 
-    '柊' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
     '亞' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
+    '匁' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
+    '柊' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
     '苺' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 1
     '姦' =~ /^\p{InJinmeiyoKanji}$/ ? 1 : 0; # => 0
 
@@ -50,10 +53,19 @@ Lingua::JA::KanjiTable provides user-defined Unicode properties relating to Kanj
 
 # EXPORTS
 
-- InJoyoKanji - 常用漢字表（平成22年11月30日内閣告示）
+By default Lingua::JA::KanjiTable exports the following user-defined Unicode properties:
+
+- InJoyoKanji - The latest Jouyou Kanji table（平成22年11月30日内閣告示第2号）
 - InJouyouKanji - ditto
-- InJinmeiyoKanji - 人名用漢字
+- InJinmeiyoKanji - The latest Jinmeiyou Kanji table（2010年11月30日版）
 - InJinmeiyouKanji - ditto
+
+The followings are not exported by default:
+
+- InJoyoKanji20101130 - 常用漢字表（平成22年11月30日内閣告示第2号）
+- InJouyouKanji20101130 - ditto
+- InJinmeiyoKanji20101130- 人名用漢字表（2010年11月30日版）
+- InJinmeiyouKanji20101130 - ditto
 
 # SEE ALSO
 
@@ -63,11 +75,11 @@ Lingua::JA::KanjiTable provides user-defined Unicode properties relating to Kanj
 
 [Jinmeiyō kanji - Wikipedia, the free encyclopedia](http://en.wikipedia.org/wiki/Jinmeiy%C5%8D_kanji)
 
+[人名用漢字表](http://www.moj.go.jp/content/000058122.pdf)
+
 戸籍法 第50条
 
 戸籍法施行規則 第60条
-
-[人名用漢字表](http://www.moj.go.jp/content/000058122.pdf)
 
 # LICENSE
 
