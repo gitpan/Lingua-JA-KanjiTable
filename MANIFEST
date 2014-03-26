@@ -17,5 +17,6 @@ t/00_compile.t
 t/01_joyo_kanji.t
 t/02_jinmeiyo_kanji.t
 xt/01_synopsis_expectation.t
+xt/10_count.t
 META.yml
 MANIFEST
