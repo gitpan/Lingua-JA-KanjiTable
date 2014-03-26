@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Exporter qw/import/;
 
-our $VERSION   = "0.05";
+our $VERSION   = "0.06";
 our @EXPORT    = qw/InJoyoKanji InJouyouKanji InJinmeiyoKanji InJinmeiyouKanji/;
 our @EXPORT_OK = qw/InJoyoKanji20101130 InJouyouKanji20101130 InJinmeiyoKanji20101130 InJinmeiyouKanji20101130/;
 
@@ -2923,7 +2923,7 @@ The followings are not exported by default:
 
 =item InJouyouKanji20101130 - ditto
 
-=item InJinmeiyoKanji20101130- 人名用漢字表（2010年11月30日版）
+=item InJinmeiyoKanji20101130 - 人名用漢字表（2010年11月30日版）
 
 =item InJinmeiyouKanji20101130 - ditto
 
