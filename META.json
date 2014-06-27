@@ -1,10 +1,10 @@
 {
-   "abstract" : "User-Defined Character Properties for å¸¸ç¨æ¼¢å­è¡¨ and äººåç¨æ¼¢å­è¡¨",
+   "abstract" : "User-Defined Character Properties for &#x5E38;&#x7528;&#x6F22;&#x5B57;&#x8868; and &#x4EBA;&#x540D;&#x7528;&#x6F22;&#x5B57;&#x8868;",
    "author" : [
       "pawa <pawa@pawafuru.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v1.1.0",
+   "generated_by" : "Minilla/v2.1.1",
    "license" : [
       "perl_5"
    ],
@@ -28,8 +28,6 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "CPAN::Meta" : "0",
-            "CPAN::Meta::Prereqs" : "0",
             "Module::Build" : "0.38"
          }
       },
@@ -54,13 +52,7 @@
          }
       }
    },
-   "provides" : {
-      "Lingua::JA::KanjiTable" : {
-         "file" : "lib/Lingua/JA/KanjiTable.pm",
-         "version" : "0.10"
-      }
-   },
-   "release_status" : "stable",
+   "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/pawa-/Lingua-JA-KanjiTable/issues"
@@ -71,5 +63,5 @@
          "web" : "https://github.com/pawa-/Lingua-JA-KanjiTable"
       }
    },
-   "version" : "0.10"
+   "version" : "0.11_01"
 }

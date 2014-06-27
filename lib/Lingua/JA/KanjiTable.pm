@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Exporter qw/import/;
 
-our $VERSION   = "0.10";
+our $VERSION   = "0.11_01";
 our @EXPORT    = qw/InJoyoKanji InJouyouKanji InJinmeiyoKanji InJinmeiyouKanji/;
 our @EXPORT_OK = qw/InJoyoKanji20101130 InJouyouKanji20101130 InJinmeiyoKanji20101130 InJinmeiyouKanji20101130/;
 
@@ -2846,7 +2846,7 @@ __END__
 
 =head1 NAME
 
-Lingua::JA::KanjiTable - User-Defined Character Properties for 常用漢字表 and 人名用漢字表
+Lingua::JA::KanjiTable - User-Defined Character Properties for &#x5E38;&#x7528;&#x6F22;&#x5B57;&#x8868; and &#x4EBA;&#x540D;&#x7528;&#x6F22;&#x5B57;&#x8868;
 
 =head1 SYNOPSIS
 
@@ -2869,11 +2869,7 @@ Lingua::JA::KanjiTable - User-Defined Character Properties for 常用漢字表 a
 
 =for test_synopsis_expectation_no_test
 
-Jinmei(名) check:
-
-  use Lingua::JA::KanjiTable;
-  use utf8;
-
+  #Jinmei(名) check:
   '太郎喜左衛門将時能' =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
   '愛子エンジェル'     =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 1
   'み〜こ'             =~ /^\p{InJinmei}+$/ ? 1 : 0; # => 0
@@ -2915,7 +2911,7 @@ By default Lingua::JA::KanjiTable exports the following user-defined character p
 
 =back
 
-The followings are not exported by default:
+The following properties are not exported by default:
 
 =over 4
 
