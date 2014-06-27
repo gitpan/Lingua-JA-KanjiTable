@@ -1,5 +1,5 @@
 {
-   "abstract" : "User-Defined Character Properties for &#x5E38;&#x7528;&#x6F22;&#x5B57;&#x8868; and &#x4EBA;&#x540D;&#x7528;&#x6F22;&#x5B57;&#x8868;",
+   "abstract" : "User-Defined Character Properties for Joyo Kanji and Jinmeiyo Kanji",
    "author" : [
       "pawa <pawa@pawafuru.com>"
    ],
@@ -52,7 +52,13 @@
          }
       }
    },
-   "release_status" : "unstable",
+   "provides" : {
+      "Lingua::JA::KanjiTable" : {
+         "file" : "lib/Lingua/JA/KanjiTable.pm",
+         "version" : "0.12"
+      }
+   },
+   "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
          "web" : "https://github.com/pawa-/Lingua-JA-KanjiTable/issues"
@@ -63,5 +69,5 @@
          "web" : "https://github.com/pawa-/Lingua-JA-KanjiTable"
       }
    },
-   "version" : "0.11_01"
+   "version" : "0.12"
 }
